@@ -3,7 +3,7 @@ django-reservations
 
 A simple and customizable Django module for handling reservations. 
 
-![Sample app screenshot using django-reservations](./screen1.jpg)
+![Sample app screenshot using django-reservations](django-reservations/screen1.jpg)
 
 Features
 --------
@@ -98,4 +98,4 @@ TODOs
  * Sample app using Django reservations
  * Implemenging user requested features
 
-Got some questions or suggestions? [Mail me](mailto:bkobos+ghdr@extensa.pl) directly or use the [issue tracker](./issues).
+Got some questions or suggestions? [Mail me](mailto:bkobos+ghdr@extensa.pl) directly or use the [issue tracker](django-reservations/issues).
