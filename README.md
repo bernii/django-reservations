@@ -3,7 +3,7 @@ django-reservations
 
 A simple and customizable Django module for handling reservations. 
 
-![Sample app screenshot using django-reservations](django-reservations/screen1.jpg)
+![Sample app screenshot using django-reservations](https://raw.github.com/bernii/django-reservations/master/screen1.jpg)
 
 Features
 --------
