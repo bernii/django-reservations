@@ -62,7 +62,7 @@ class DetailedReservation(Reservation):
 
     def short_desc(self):
         """Displayed on the reservation removal button"""
-        return str(self.id) + "/" + str(self.file_number)
+        return str(self.id) + "/" + str(self.race)
 
 update_model(DetailedReservation)
 
