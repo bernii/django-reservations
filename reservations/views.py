@@ -95,7 +95,7 @@ class Reservation(JSONResponseMixin, View):
             return HttpResponseForbidden(_("You have already made a reservation during that day"))
 
         if not hasattr(settings, 'RESERVATION_SPOTS_TOTAL'):
-            raise Exception("Setting not set, contact admin")
+            raise Exception("Critical error. Setting not set, contact admin")
 
         # Check if spot is still available
         reservation_day = ReservationDay.objects.get_or_create(date=date,
