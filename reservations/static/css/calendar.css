@@ -1,0 +1,97 @@
+
+/* Body and structure
+-------------------------------------------------- */
+.year{
+	font-size:108px;
+	margin-top:30px;
+	color: #404040;
+	margin-bottom: 18px; line-height: 36px;
+}
+.month{
+	font-size:42px;
+	color:red; line-height: 36px;
+}
+.time{
+	float:right;
+	font-size:36px;
+	text-align:right;
+	line-height: 36px;
+}
+.calendar-nav{
+	list-style: none; margin: 0; padding: 0;
+	position: absolute; top: 90px; right: 100px;
+}
+.calendar-nav li{
+	float: left; margin-right: 12px;
+}
+.calendar{
+	height: 580px;
+}
+.info{
+	font-size: 0.5em;
+}
+
+.calendar TH{
+	font-size:13px;
+	font-weight:bold;
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	padding: 10px 10px 9px; line-height: 18px;
+	vertical-align: middle;
+}
+
+.calendar TD{
+	height:50px;
+	font-size:24px;
+	color:#999;
+
+	vertical-align: top; border-top: 1px solid #DDD;
+	padding: 10px 10px 9px; line-height: 18px; text-align: left;
+}
+.calendar TD.future:hover{
+	background-color: #9bfff4;
+}
+.day-actions{
+	visibility: hidden;
+	margin: 10px 0 5px 0; padding: 0; list-style: none;
+	font-size: 0.5em;
+}
+.calendar TD.future:hover .day-actions, .calendar TD.reservation:hover .day-actions{
+	visibility: visible;
+}
+
+.calendar TD.weekend{
+	color:#CDCDCD;
+}
+
+.calendar TD.today{
+	background-color:#EFEFEF;
+	color:#666666;
+}
+
+.calendar TD.reservation{
+	background-color:#84f66e;
+	color:#666666;
+}
+
+.calendar TD.past{
+	background-color:#c6c4c4;
+	color:#666666;
+}
+
+.calendar TD.holiday{
+	color:red;
+}
+.admin-content{
+	display: block; width: 80%;
+	margin: 50px 10% 50px 10%;
+}
+.col1{
+	float: left; width: 300px;
+}
+.col2{
+	float: right; width: 360px;
+}
+.border-img{
+	padding: 5px; border: 1px solid #E5E5E5;
+}

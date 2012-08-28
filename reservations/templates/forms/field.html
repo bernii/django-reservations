@@ -1,0 +1,9 @@
+{% comment %}
+
+{% endcomment %}
+<div class="control-group">
+	<label class="control-label" for="id_{{ field.name }}">{{ field.label }}{% if field.field.required %}<span class="required">*</span>{% endif %}:</label>
+	<div class="controls">{{ field }}
+		<span class="help-inline"></span>
+	</div>
+</div>

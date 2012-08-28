@@ -1,0 +1,37 @@
+{% load i18n %}
+<html>
+<head>
+<style type="text/css">
+.shares a{
+    float: left; margin-right: 10px;
+    cursor: pointer; text-decoration: none;
+}
+.shares{
+    height: 20px;
+}
+</style>
+</head>
+<body>
+
+<img src="http://extensa.pl/logo_square.jpg"/>
+
+<p>
+{% trans "Welcome" %} {{name}},
+</p>
+<p>
+{% trans "Your reservation" %} (ID: <b>{{reservation_id}}</b>) {%trans "for" %} <strong>{{ date|date:"d-m-Y"}}</strong> {% trans "has been successfully created" %}.
+{% if extra_data %}
+	<br/><br/>
+	{% for name, val in extra_data.cleaned_data.items %}
+	{{ name }}: <b>{{val}}</b>
+	{% endfor %}
+{% endif %}
+<br/><br/>
+{% trans "Remember! You can cancel your reservation and change the reservation day no later than 48 hours before the selected term" %}. {% trans "To make the change, log in to" %} <a href="{{ domain }}">{% trans "E-reservation system" %}</a> {% trans "and make the change" %}.
+</p>
+
+<p>Thanks,</p>
+Django Reservaton System
+</p>
+</body>
+</html>

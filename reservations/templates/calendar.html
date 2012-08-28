@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block extrahead %}
+    <script src="/static/js/trans_{{ LANGUAGE_CODE }}.min.js" type="text/javascript"></script>
+    <script src="/static/js/ui.min.js" type="text/javascript"></script>
+    <link href="/static/css/calendar.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+<!--     <div id="form_details">{{ form_details }}<div> -->
+    <div class="row">
+        <div class="span12 offset2">
+        
+            <h1 class="year"></h1>
+            
+            <h2 class="time"></h2>
+        
+            <h3 class="month"></h3>
+        
+            <table id="calendar" class="calendar">
+                <thead>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            
+            <ul id="calendar-nav" class="calendar-nav">
+                <li><input type="button" name="last" id="last" value="{% trans "Previous" %}" class="btn"></li>
+                <li><input type="button" name="current" id="current" value="{% trans "Actual" %}" class="btn"></li>
+                <li><input type="button" name="next" id="next" value="{% trans "Next" %}" class="btn"></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<div class="modal hide fade" id="modal-detail-form" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Provide extra data for reservation</h3>
+  </div>
+  <div class="modal-body">
+    <p><form>{{ form_details }}</form></p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">{% trans "Close" %}</button>
+    <button class="btn btn-primary">{% trans "Submit" %}</button>
+  </div>
+</div>
+
+<div class="modal fade hide" id="modal-info">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3>Modal header</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn btn-primary" data-dismiss="modal">{% trans "Close" %}</a>
+  </div>
+</div>
+<form action="." method="post">{% csrf_token %}</form>
+
+<script>
+    App.defaults = {
+        spots_free: {{ defaults.spots_total }},
+        get_extra_data: {{ defaults.get_extra_data }},
+        reservations_limit: {{ defaults.reservations_limit }}
+    };
+</script>
+{% endblock %}
