@@ -4,4 +4,5 @@ python:
 install:
 script:
   - pip install -q Django
+  - python setup.py develop
   - ./runtests.py
