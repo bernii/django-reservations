@@ -3,6 +3,7 @@ from models import Reservation, SimpleReservation, Holiday
 from django.core.urlresolvers import reverse
 from django.test.client import Client
 from django.test.utils import override_settings
+# from django.conf import settings
 import json
 from django.db import models
 import datetime as dt
@@ -39,8 +40,8 @@ class TestLoggedIn(TestCase):
     def test_not_authorized(self):
         """Not logged in user tries to make a reservation"""
         self.client.logout()
-        response = self.client.post(reverse('reservations_reservation'), self.reservtion_data['simple'], follow=True)
-        self.assertRedirects(response, '/accounts/login/?next=/reservations/reservation')
+        response = self.client.post(reverse('reservations_reservation'), self.reservtion_data['simple'], follow=False)
+        self.assertTrue('/accounts/login/' in response['Location'])
 
     @override_settings(RESERVATIONS_PER_DAY=2)
     def test_above_threshold(self):
