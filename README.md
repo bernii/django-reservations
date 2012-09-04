@@ -91,6 +91,8 @@ Project has full unit test coverage of the backend. After adding it to your Djan
 
     ./manage.py test reservations
 
+![Continuous Integration status](https://secure.travis-ci.org/bernii/django-reservations.png)
+
 
 TODOs
 -----
