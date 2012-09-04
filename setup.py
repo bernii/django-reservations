@@ -7,7 +7,7 @@ PACKAGE_DIR = os.path.abspath(os.path.dirname(__file__))
 os.chdir(PACKAGE_DIR)
 
 
-setup(name='django-cacheback',
+setup(name='django-reservations',
       version=0.2,
       url='https://github.com/bernii/django-reservations',
       author="Bernard Kobos",
